@@ -1,0 +1,5 @@
+﻿Pollutant,Limit
+CO,1.5
+NOx,0.25
+PM,0.01
+HC,0.07
