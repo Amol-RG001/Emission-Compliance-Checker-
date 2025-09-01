@@ -19,7 +19,10 @@ def run_checker():
         if messagebox.askyesno("Save Report", "Do you want to save a PDF report?"):
             filename = filedialog.asksaveasfilename(defaultextension=".pdf")
             if filename:
-                generate_pdf_report(filename, fuel_type, emissions, compliance)
+                #generate_pdf_report(filename, fuel_type, emissions, compliance)
+                from emissions import load_datasets
+                _, limits = load_datasets()
+                generate_pdf_report(filename, fuel_type, power, hours, emissions, limits)
                 messagebox.showinfo("Success", "Report saved successfully!")
 
     except Exception as e:
